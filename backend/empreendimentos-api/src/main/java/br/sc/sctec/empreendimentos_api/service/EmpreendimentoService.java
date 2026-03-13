@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EmpreendimentoService {
@@ -26,5 +28,9 @@ public class EmpreendimentoService {
         return empreendimentoRepository.save(empreendimento);
 
 
+    }
+
+    public List<Empreendimento> consultar() {
+        return empreendimentoRepository.findAll();
     }
 }
