@@ -86,15 +86,82 @@ Base URL: http://localhost:8080
 
 Endpoints disponíveis:
 
-POST /empreendimento – Criar empreendimento
+# POST /empreendimento – Criar empreendimento
+Request:
+```
+{
+  "nomeEmpreendimento": "Minha Empresa",
+  "nomeResponsavel": "Rafael",
+  "municipio": "Florianópolis",
+  "segmentoAtuacao": "TECNOLOGIA",
+  "email": "rafael@rafal.com.br",
+  "status": "ativo"
+}
+```
+Response (201 Created):
+```
+{
+  "id": 1,
+  "nomeEmpreendimento": "Minha Empresa",
+  "nomeResponsavel": "Rafael",
+  "municipio": "Florianópolis",
+  "segmentoAtuacao": "TECNOLOGIA",
+  "email": "rafael@rafal.com.br",
+  "status": "ativo",
+}
+```
 
-GET /empreendimento – Listar todos
+
+# GET /empreendimento – Listar todos
+Response (200 OK):
+```
+[
+  {
+  "id": 1,
+  "nomeEmpreendimento": "Minha Empresa",
+  "nomeResponsavel": "Rafael",
+  "municipio": "Florianópolis",
+  "segmentoAtuacao": "TECNOLOGIA",
+  "email": "rafael@rafal.com.br",
+  "status": "ativo",
+}
+]
+```
 
 GET /empreendimento/{id} – Consultar por ID
 
-PUT /empreendimento/{id} – Atualizar
 
-DELETE /empreendimento/{id} – Deletar
+# PUT /empreendimento/{id} – Atualizar
+
+Request:
+```
+{
+  "nomeEmpreendimento": "Minha Empresa Atualizada",
+  "status": "inativo"
+}
+```
+
+Response (200 OK):
+```
+{
+  "id": 1,
+  "nomeEmpreendimento": "Minha Empresa Atualizada",
+  "nomeResponsavel": "Rafael",
+  "municipio": "Florianópolis",
+  "segmentoAtuacao": "TECNOLOGIA",
+  "email": "rafael@rafal.com.br",
+  "status": "inativo"
+}
+```
+
+# DELETE /empreendimento/{id} – Deletar
+
+Response (204 No Content):
+
+Sem conteúdo de resposta, apenas confirma que deletou com sucesso.
+
+
+
 
 
 
