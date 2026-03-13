@@ -34,32 +34,27 @@ O objetivo é fornecer uma API REST simples e funcional, que possa ser utilizada
 
 ## Estrutura Geral do Projeto
 
-br.sc.sctec.empreendimentos_api
-│
-├── controller
-│ └── EmpreendimentoController.java # Define os endpoints da API
-│
-├── dto
-│ ├── EmpreendimentoRequest.java # DTO para criação
-│ ├── EmpreendimentoEdicaoRequest.java # DTO para atualização
-│ └── EmpreendimentoResponse.java # DTO para retorno das respostas
-│
-├── exception
-│ ├── RegistroExistenteException.java # Exceção para registros duplicados
-│ ├── RegistroNaoEncontradoException.java # Exceção para registros não encontrados
-│ └── RestExceptionHandler.java # Handler global das exceções
-│
-├── model
-│ ├── Empreendimento.java # Entidade principal
-│ ├── ErroResponse.java # DTO para erros
-│ ├── SegmentoAtuacao.java # Enum de segmento
-│ └── Status.java # Enum de status
-│
-├── repository
-│ └── EmpreendimentoRepository.java # Interface DAO para acesso ao banco
-│
-└── service
-└── EmpreendimentosApiApplication.java # Classe principal da aplicação
+## Estrutura Geral do Projeto
+
+- **controller**
+  - EmpreendimentoController.java
+- **dto**
+  - EmpreendimentoRequest.java
+  - EmpreendimentoEdicaoRequest.java
+  - EmpreendimentoResponse.java
+- **exception**
+  - RegistroExistenteException.java
+  - RegistroNaoEncontradoException.java
+  - RestExceptionHandler.java
+- **model**
+  - Empreendimento.java
+  - ErroResponse.java
+  - SegmentoAtuacao.java
+  - Status.java
+- **repository**
+  - EmpreendimentoRepository.java
+- **service**
+  - EmpreendimentosApiApplication.java
 
 > O backend utiliza **Spring Data JPA** para persistência dos dados e **H2 Database** em memória, facilitando testes locais sem necessidade de banco externo.
 
