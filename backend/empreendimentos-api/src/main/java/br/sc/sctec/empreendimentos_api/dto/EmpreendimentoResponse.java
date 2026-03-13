@@ -1,17 +1,11 @@
-package br.sc.sctec.empreendimentos_api.model;
+package br.sc.sctec.empreendimentos_api.dto;
 
-
-import jakarta.persistence.*;
+import br.sc.sctec.empreendimentos_api.model.SegmentoAtuacao;
+import br.sc.sctec.empreendimentos_api.model.Status;
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name= " EMPREENDIMENTOS")
-public class Empreendimento {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class EmpreendimentoResponse {
 
     private String nomeEmpreendimento;
 
@@ -24,8 +18,5 @@ public class Empreendimento {
     private String email;
 
     private Status status;
-
-
-
 
 }
