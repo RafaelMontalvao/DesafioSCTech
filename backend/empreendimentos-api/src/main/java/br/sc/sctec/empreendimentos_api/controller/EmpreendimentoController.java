@@ -55,6 +55,12 @@ public class EmpreendimentoController {
         return ResponseEntity.ok(response);
     }
 
+    @DeleteMapping("/{id}")
+    public  ResponseEntity excluir(@PathVariable Long id){
+        service.excluir(id);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 

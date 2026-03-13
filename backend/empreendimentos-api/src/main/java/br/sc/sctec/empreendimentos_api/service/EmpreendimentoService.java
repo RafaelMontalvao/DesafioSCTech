@@ -68,4 +68,12 @@ public class EmpreendimentoService {
         return empreendimentoRepository.save(empreendimentoAtualizado);
 
     }
+
+    public void excluir(Long id) {
+       boolean existe = empreendimentoRepository.existsById(id);
+       if(!existe)
+           throw new RegistroNaoEncontradoException();
+        empreendimentoRepository.deleteById(id);
+
+    }
 }
