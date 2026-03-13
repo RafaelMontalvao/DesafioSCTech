@@ -86,7 +86,10 @@ Base URL: http://localhost:8080
 
 Endpoints disponíveis:
 
-# POST /empreendimento – Criar empreendimento
+# POST  – Criar empreendimento
+
+/empreendimento
+
 Request:
 ```
 {
@@ -112,7 +115,10 @@ Response (201 Created):
 ```
 
 
-# GET /empreendimento – Listar todos
+# GET  – Listar todos
+
+/empreendimento
+
 Response (200 OK):
 ```
 [
@@ -131,7 +137,9 @@ Response (200 OK):
 GET /empreendimento/{id} – Consultar por ID
 
 
-# PUT /empreendimento/{id} – Atualizar
+# PUT – Atualizar
+
+/empreendimento/{id}
 
 Request:
 ```
@@ -154,7 +162,9 @@ Response (200 OK):
 }
 ```
 
-# DELETE /empreendimento/{id} – Deletar
+# DELETE – Deletar
+
+/empreendimento/{id}
 
 Response (204 No Content):
 
