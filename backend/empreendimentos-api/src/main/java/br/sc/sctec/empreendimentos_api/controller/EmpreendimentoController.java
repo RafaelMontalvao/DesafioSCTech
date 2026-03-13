@@ -1,6 +1,7 @@
 package br.sc.sctec.empreendimentos_api.controller;
 
 
+import br.sc.sctec.empreendimentos_api.dto.EmpreendimentoEdicaoRequest;
 import br.sc.sctec.empreendimentos_api.dto.EmpreendimentoRequest;
 import br.sc.sctec.empreendimentos_api.dto.EmpreendimentoResponse;
 import br.sc.sctec.empreendimentos_api.model.Empreendimento;
@@ -46,4 +47,15 @@ public class EmpreendimentoController {
         return ResponseEntity.ok(response);
 
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<EmpreendimentoResponse> editar(@PathVariable Long id, @RequestBody @Valid EmpreendimentoEdicaoRequest empreendimentoRequest) {
+        Empreendimento empreendimentoAtualizado = service.atualizar(id, empreendimentoRequest);
+        EmpreendimentoResponse response = mapper.map(empreendimentoAtualizado, EmpreendimentoResponse.class);
+        return ResponseEntity.ok(response);
+    }
+
+
+
+
 }
