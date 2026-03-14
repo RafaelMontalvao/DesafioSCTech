@@ -48,6 +48,14 @@ public class EmpreendimentoController {
 
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<EmpreendimentoResponse> consultar(@PathVariable Long id){
+        Empreendimento empreendimento  = service.getByID(id);
+        return ResponseEntity.ok(mapper.map(empreendimento, EmpreendimentoResponse.class));
+
+
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<EmpreendimentoResponse> editar(@PathVariable Long id, @RequestBody @Valid EmpreendimentoEdicaoRequest empreendimentoRequest) {
         Empreendimento empreendimentoAtualizado = service.atualizar(id, empreendimentoRequest);

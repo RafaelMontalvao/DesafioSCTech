@@ -35,7 +35,10 @@ const createEmpreendimento = async(empredimento)=>{
       const { data } = await api.get('/empreendimento')
       empreedimentos.value = data
     } finally {
-      isLoading.value = false
+       setTimeout(() => {
+           isLoading.value = false
+          }, 500)
+      
     }
   };
 
