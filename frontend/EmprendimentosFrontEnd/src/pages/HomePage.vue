@@ -6,7 +6,7 @@
     <v-row v-if="!empreendimentoStore.isLoading" >
       
       <v-col cols="12">
-        <v-btn @click="clickForm()"
+        <v-btn @click="clickForm(0)"
           prepend-icon="mdi-plus" 
           class="float-right" 
           variant="outlined" 
