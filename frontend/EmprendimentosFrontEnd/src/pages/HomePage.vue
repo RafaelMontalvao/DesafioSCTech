@@ -26,16 +26,13 @@
             hide-default-footer>
 
             <template v-slot:item.edit="{ item }">
-              <v-icon icon="mdi-pencil-outline"size="small"  color="secondary" @click="console.log('cliquei')"></v-icon>
+              {{ item.id }}
+              <v-icon icon="mdi-pencil-outline"size="small"  color="secondary" @click="clickForm(item.id)"></v-icon>
             </template>
 
              
 
-            <template v-slot:item.materials="{ item }">
-              <span v-for="material in item.materials?.slice(0,3)" :key="material.id">
-                <v-chip label size="x-small" density="comfortable" variant="outlined" color="secondary" class="ml-1">{{material.rawMaterialName}} - {{ material.quantityNeeded }} unid.</v-chip>
-              </span>  
-            </template> 
+            
 
         </v-data-table>
       </v-col>

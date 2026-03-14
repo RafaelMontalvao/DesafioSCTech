@@ -36,7 +36,7 @@ const createEmpreendimento = async(empredimento)=>{
       empreedimentos.value = data
     } finally {
        setTimeout(() => {
-          
+          isLoading.value = false
           }, 500)
       
     }
