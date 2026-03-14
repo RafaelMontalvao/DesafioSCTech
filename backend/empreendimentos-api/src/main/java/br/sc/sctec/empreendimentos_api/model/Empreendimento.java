@@ -15,14 +15,18 @@ public class Empreendimento {
 
     private String nomeEmpreendimento;
 
-    private String nomeResposnvael;
+    private String nomeResponsavel;
 
     private String municipio;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private SegmentoAtuacao segmentoAtuacao;
 
     private String email;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Status status;
 
 

@@ -9,7 +9,7 @@ public class EmpreendimentoResponse {
 
     private String nomeEmpreendimento;
 
-    private String nomeResposnvael;
+    private String nomeResponsavel;
 
     private String municipio;
 
