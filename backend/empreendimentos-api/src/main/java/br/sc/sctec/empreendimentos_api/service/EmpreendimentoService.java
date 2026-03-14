@@ -52,8 +52,8 @@ public class EmpreendimentoService {
         if(empreendimentoRequest.getEmail() != null && !empreendimentoRequest.getEmail().isBlank()){
             empreendimentoAtualizado.setEmail(empreendimentoRequest.getEmail());
         }
-        if(empreendimentoRequest.getNomeResposnvael() != null && !empreendimentoRequest.getNomeResposnvael().isBlank()){
-            empreendimentoAtualizado.setNomeResposnvael(empreendimentoRequest.getNomeResposnvael());
+        if(empreendimentoRequest.getNomeResponsavel() != null && !empreendimentoRequest.getNomeResponsavel().isBlank()){
+            empreendimentoAtualizado.setNomeResponsavel(empreendimentoRequest.getNomeResponsavel());
         }
         if(empreendimentoRequest.getMunicipio() != null && !empreendimentoRequest.getMunicipio().isBlank()){
             empreendimentoAtualizado.setMunicipio(empreendimentoRequest.getMunicipio());

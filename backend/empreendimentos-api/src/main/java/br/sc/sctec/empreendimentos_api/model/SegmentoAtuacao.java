@@ -9,6 +9,7 @@ public enum SegmentoAtuacao {
     COMERCIO,
     INDUSTRIA,
     SERVICO,
+    SAUDE,
     AGRONEGOCIO;
 
     @JsonCreator

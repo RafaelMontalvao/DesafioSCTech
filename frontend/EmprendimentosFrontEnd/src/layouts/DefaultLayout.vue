@@ -2,9 +2,9 @@
     <v-card>
         <v-layout>
             <v-app-bar color="primary" elevation="3">
-                <template v-slot:prepend>
+                <!-- <template v-slot:prepend>
                     <v-app-bar-nav-icon @click.stop="drawer=!drawer"></v-app-bar-nav-icon>
-                </template>
+                </template> -->
 
                 <v-app-bar-title>Desafio Emprendimentos</v-app-bar-title>
                 </v-app-bar>

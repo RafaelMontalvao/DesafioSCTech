@@ -15,7 +15,7 @@ public class EmpreendimentoRequest {
     private String nomeEmpreendimento;
 
     @NotEmpty(message="Campo Obrigatório")
-    private String nomeResposnvael;
+    private String nomeResponsavel;
 
     @NotEmpty(message="Campo Obrigatório")
     private String municipio;
