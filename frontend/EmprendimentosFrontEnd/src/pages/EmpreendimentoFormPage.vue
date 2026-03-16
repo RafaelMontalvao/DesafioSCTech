@@ -123,7 +123,7 @@ async function clickSendForm() {
     error?.response?.data?.erros?.[0] ||
     error?.response?.data?.message ||
     error?.message ||
-    'Erro ao salvar produto'
+    'Erro ao salvar Empreendimento'
 
   notification.error(msg)
 }
@@ -140,7 +140,7 @@ function clickDeleteEmpreendimento () {
 async function deleteEmpreendimento (){
   try{
     await store.deleteEmpreendimento(empreendimentoId.value)
-    notification.success('Empreendimento Deleted')
+    notification.success('Empreendimento Deletado')
     dialogModel.value = false
   }
   catch(error) {
@@ -274,8 +274,8 @@ async function deleteEmpreendimento (){
             <v-card
                 max-width="400"
                 prepend-icon="mdi-delete"
-                title="Você deseja Excluir esse Empreediemento?"
-                class="bg-"
+                title=" Excluir Empreediemento?"
+                class="bg-secondary"
                 >
                 <template v-slot:actions>
                     <v-btn
