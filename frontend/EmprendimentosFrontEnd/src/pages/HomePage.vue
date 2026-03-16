@@ -26,7 +26,6 @@
             hide-default-footer>
 
             <template v-slot:item.edit="{ item }">
-              {{ item.id }}
               <v-icon icon="mdi-pencil-outline"size="small"  color="secondary" @click="clickForm(item.id)"></v-icon>
             </template>
 
