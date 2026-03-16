@@ -91,7 +91,7 @@ Endpoints disponíveis:
 /empreendimento
 
 Request:
-```
+```json
 {
   "nomeEmpreendimento": "Minha Empresa",
   "nomeResponsavel": "Rafael",
@@ -102,7 +102,7 @@ Request:
 }
 ```
 Response (201 Created):
-```
+```json
 {
   "id": 1,
   "nomeEmpreendimento": "Minha Empresa",
@@ -120,7 +120,7 @@ Response (201 Created):
 /empreendimento
 
 Response (200 OK):
-```
+```json
 [
   {
   "id": 1,
@@ -142,7 +142,7 @@ GET /empreendimento/{id} – Consultar por ID
 /empreendimento/{id}
 
 Request:
-```
+```json
 {
   "nomeEmpreendimento": "Minha Empresa Atualizada",
   "status": "inativo"
@@ -150,7 +150,7 @@ Request:
 ```
 
 Response (200 OK):
-```
+```json
 {
   "id": 1,
   "nomeEmpreendimento": "Minha Empresa Atualizada",
