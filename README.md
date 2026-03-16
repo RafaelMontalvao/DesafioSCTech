@@ -1,5 +1,8 @@
 # DesafioSCTech
 
+video mostrando o desafio : https://www.youtube.com/watch?v=TQ_HqT45Y0E
+
+
 # Empreendimentos API
 
 ## Descrição da Solução
