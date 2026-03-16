@@ -218,7 +218,7 @@ async function deleteEmpreendimento (){
                             density="compact"
                             :rules="[ rules.required]" 
                             hide-details="auto"
-                            prepend-inner-icon="mdi-city-variant"
+                            prepend-inner-icon="mdi-checkbox-marked-outline"
                             label="Segmento de Atuação">
                         </v-select>
                     </v-col>
@@ -244,7 +244,7 @@ async function deleteEmpreendimento (){
                             density="compact"
                             hide-details="auto"
                             hide-selected
-                            prepend-inner-icon="mdi-city-variant"
+                            prepend-inner-icon="mdi-tune-variant"
                             label="Status">
                         </v-select>
                     </v-col>
