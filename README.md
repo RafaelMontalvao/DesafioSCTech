@@ -172,6 +172,186 @@ Sem conteúdo de resposta, apenas confirma que deletou com sucesso.
 
 
 
+___________________________________________________________________________________________________________________________________________
+
+# Integração com API de Municípios (IBGE)
+
+Para o preenchimento do campo **Município** no formulário de cadastro e edição de empreendimentos, a aplicação utiliza dados fornecidos pela API pública do **IBGE**.
+
+A integração com o IBGE é realizada **no backend**, que é responsável por buscar os municípios do estado de Santa Catarina.
+
+Essa abordagem foi adotada para centralizar a comunicação com APIs externas e permitir a implementação de **cache**, reduzindo a quantidade de requisições externas e melhorando o desempenho da aplicação.
+
+### Fluxo de funcionamento
+
+1. O **frontend** solicita a lista de municípios através da API do projeto.
+2. O **backend** verifica se os dados estão disponíveis em cache.
+3. Caso não estejam, o backend realiza uma requisição para a **API do IBGE**.
+4. Os dados são armazenados em cache e retornados para o frontend.
+
+### API externa utilizada
+
+https://servicodados.ibge.gov.br/api/v1/localidades/estados/SC/municipios
+
+### Exemplo de resposta
+
+```json
+[
+  {
+    "id": 4205407,
+    "nome": "Florianópolis"
+  },
+  {
+    "id": 4209102,
+    "nome": "Joinville"
+  }
+]
+
+
+
+_________________________________________________________________________________________________________________________________________________________________
+
+
+# Frontend – Empreendimentos
+
+## Descrição da Aplicação
+
+O **Frontend de Empreendimentos** é uma aplicação desenvolvida em **Vue 3**, responsável pela interface de gerenciamento dos empreendimentos cadastrados na API.
+
+A aplicação consome a **Empreendimentos API** e permite que o usuário realize operações de:
+
+- Listagem de empreendimentos
+- Cadastro de novos empreendimentos
+- Edição de empreendimentos existentes
+- Exclusão de registros
+
+A interface foi desenvolvida utilizando **Vuetify**, proporcionando componentes visuais modernos e responsivos.
+
+A comunicação com o backend é feita através de requisições HTTP utilizando **Axios**, consumindo os endpoints disponibilizados pela API.
+
+---
+
+# Tecnologias Utilizadas
+
+- Vue 3  
+- TypeScript  
+- Vue Router  
+- Pinia (Gerenciamento de Estado)  
+- Vuetify  
+- Axios  
+- Vite  
+
+---
+
+# Estrutura Geral do Projeto
+
+- **components**
+  - ContainerDefault.vue
+
+- **pages**
+  - HomePage.vue
+  - EmpreendimentoFormPage.vue
+
+- **stores**
+  - empreendimentos.js
+  - municipios.js
+
+- **services**
+  - api.ts
+
+- **router**
+  - index.ts
+
+- **composables**
+  - useNotification.js
+  - useApi.js
+
+---
+
+# Funcionalidades Implementadas
+
+A aplicação possui as seguintes funcionalidades:
+
+### Listagem de Empreendimentos
+
+Exibe todos os empreendimentos cadastrados no sistema utilizando uma tabela.
+
+### Cadastro de Empreendimento
+
+Permite cadastrar um novo empreendimento informando:
+
+- Nome do empreendimento
+- Nome do responsável
+- Município
+- Segmento de atuação
+- Email
+- Status
+
+### Edição de Empreendimento
+
+Permite alterar informações de um empreendimento existente.
+
+### Exclusão de Empreendimento
+
+Permite remover um empreendimento através de um diálogo de confirmação.
+
+---
+
+# Integração com API
+
+A aplicação consome os seguintes endpoints da API:
+
+| Método | Endpoint | Descrição |
+|------|------|------|
+| GET | /empreendimento | Listar empreendimentos |
+| GET | /empreendimento/{id} | Buscar empreendimento |
+| POST | /empreendimento | Criar empreendimento |
+| PUT | /empreendimento/{id} | Atualizar empreendimento |
+| DELETE | /empreendimento/{id} | Excluir empreendimento |
+
+---
+
+# Instruções para Execução
+
+## 1 – Instalar dependências
+
+```bash
+npm install
+
+npm run dev
+```
+
+# Aplicação disponível em:
+```
+http://localhost:5173
+```
+
+##Comunicação com o Backend
+
+Para que o frontend funcione corretamente, é necessário que a API backend esteja em execução.
+
+#Por padrão, o frontend espera que a API esteja disponível em:
+```
+http://localhost:8080
+```
+##Considerações
+
+#Este projeto foi desenvolvido como parte de um desafio técnico do SCTEC, com o objetivo de demonstrar conhecimentos:
+
+Desenvolvimento de interfaces com Vue 3
+
+Consumo de APIs REST
+
+Gerenciamento de estado com Pinia
+
+Organização de projetos frontend
+
+Utilização de componentes visuais com Vuetify
+
+
+
+
+
 
 
 
