@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/empreendimento")
 @RequiredArgsConstructor
@@ -45,6 +45,14 @@ public class EmpreendimentoController {
         Collections.sort(empreendimentos, Comparator.comparing(Empreendimento::getId));
         List<EmpreendimentoResponse> response = empreendimentos.stream().map(list -> mapper.map(list, EmpreendimentoResponse.class)).toList();
         return ResponseEntity.ok(response);
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EmpreendimentoResponse> consultar(@PathVariable Long id){
+        Empreendimento empreendimento  = service.getByID(id);
+        return ResponseEntity.ok(mapper.map(empreendimento, EmpreendimentoResponse.class));
+
 
     }
 

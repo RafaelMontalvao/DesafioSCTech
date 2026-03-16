@@ -3,11 +3,14 @@ package br.sc.sctec.empreendimentos_api;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@EnableCaching
 public class EmpreendimentosApiApplication {
 
 	public static void main(String[] args) {
@@ -25,5 +28,10 @@ public class EmpreendimentosApiApplication {
         messageSource.setBasename("classpath:messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

@@ -1,3 +1,4 @@
+import EmpreendimentoFormPage from '@/pages/EmpreendimentoFormPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -5,13 +6,19 @@ const router = createRouter({
   routes: [
     {
       path:'/',
-      component: () => import('@/layouts/defaultLayout.vue'),
+      component: () => import('@/layouts/DefaultLayout.vue'),
       children:[
         {
           path:'',
           name: 'home',
           component: ()=> import('@/pages/HomePage.vue')
-        }
+        },
+
+       {
+        path:'empreendimento/:id',
+        name:'empreendimento',
+        component:EmpreendimentoFormPage
+       }
       ]
     }
   ],

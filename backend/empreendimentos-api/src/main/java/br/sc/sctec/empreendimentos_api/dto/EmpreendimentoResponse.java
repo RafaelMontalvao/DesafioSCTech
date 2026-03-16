@@ -7,6 +7,8 @@ import lombok.Data;
 @Data
 public class EmpreendimentoResponse {
 
+    private Long id;
+
     private String nomeEmpreendimento;
 
     private String nomeResponsavel;

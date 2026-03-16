@@ -76,4 +76,13 @@ public class EmpreendimentoService {
         empreendimentoRepository.deleteById(id);
 
     }
+
+    public Empreendimento getByID( Long id) {
+       Optional<Empreendimento> empreendimentoOP = empreendimentoRepository.findById(id);
+       if (empreendimentoOP.isPresent()) {
+            return empreendimentoOP.get();
+       }
+       throw new RegistroNaoEncontradoException();
+
+    }
 }
